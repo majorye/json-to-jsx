@@ -38,4 +38,4 @@ var obj1 = {
   ]
 };
 
-console.log('<pre>' + jsx(obj1) + '</pre>');
+console.log(jsx(obj1));

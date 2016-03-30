@@ -32,7 +32,7 @@ function jsx(obj, indents) {
   if (Array.isArray(obj)) {
     ++indents;
     var buf = '\n' + obj.map(function(val){
-      return indent() + html(val, indents);
+      return indent() + jsx(val, indents);
     }).join('\n');
     --indents;
     buf +=  indent();
@@ -45,7 +45,7 @@ function jsx(obj, indents) {
     var len = keys.length;
     ++indents;
     if(obj.children) {
-      buf += html(obj.children,indents);
+      buf += jsx(obj.children,indents);
     }
     --indents;
     if (len) buf += '\n' + indent();
